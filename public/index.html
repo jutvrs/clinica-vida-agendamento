@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agendamento online de consultas da Clínica Vida">
+  <title>Clínica Vida | Agendamento</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="#inicio" aria-label="Página inicial da Clínica Vida">
+      <span class="marca-icone">+</span>
+      <span>Clínica <strong>Vida</strong></span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#agendar">Agendar</a>
+      <a href="#consultar">Meus agendamentos</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div>
+        <span class="etiqueta">Cuidado simples e próximo</span>
+        <h1>Sua saúde merece tempo, atenção e facilidade.</h1>
+        <p>Escolha o profissional, encontre um horário disponível e confirme sua consulta em poucos minutos.</p>
+        <a class="botao primario" href="#agendar">Agendar agora</a>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <span class="cruz">+</span>
+        <p>Atendimento humanizado</p>
+        <strong>Segunda a sexta</strong>
+        <small>08h às 18h</small>
+      </div>
+    </section>
+
+    <section id="servicos" class="secao">
+      <div class="titulo-secao">
+        <span>Nossos cuidados</span>
+        <h2>Especialidades para toda a família</h2>
+      </div>
+      <div class="cards-servicos">
+        <article><span>🩺</span><h3>Clínica Geral</h3><p>Avaliação, prevenção e acompanhamento da saúde.</p></article>
+        <article><span>❤️</span><h3>Cardiologia</h3><p>Cuidado especializado com o coração e a circulação.</p></article>
+        <article><span>🦴</span><h3>Ortopedia</h3><p>Diagnóstico e cuidado do sistema musculoesquelético.</p></article>
+        <article><span>🥗</span><h3>Nutrição</h3><p>Orientação alimentar para mais saúde e qualidade de vida.</p></article>
+      </div>
+    </section>
+
+    <section id="agendar" class="secao painel">
+      <div class="titulo-secao">
+        <span>Agendamento online</span>
+        <h2>Marque sua consulta</h2>
+        <p>Preencha os dados abaixo. Os horários ocupados são retirados automaticamente.</p>
+      </div>
+      <form id="form-agendamento" class="formulario">
+        <label>Especialidade
+          <select id="especialidade" required><option value="">Selecione</option></select>
+        </label>
+        <label>Profissional
+          <select id="profissional" required disabled><option value="">Selecione a especialidade</option></select>
+        </label>
+        <label>Data
+          <input id="data" type="date" required disabled>
+        </label>
+        <label>Horário
+          <select id="horario" required disabled><option value="">Selecione a data</option></select>
+        </label>
+        <label>Nome completo
+          <input id="nome" type="text" minlength="3" placeholder="Nome do paciente" required>
+        </label>
+        <label>CPF
+          <input id="cpf" type="text" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required>
+        </label>
+        <button class="botao primario largura-total" type="submit">Confirmar agendamento</button>
+        <p id="mensagem-agendamento" class="mensagem" role="status"></p>
+      </form>
+    </section>
+
+    <section id="consultar" class="secao consulta">
+      <div class="titulo-secao">
+        <span>Área do paciente</span>
+        <h2>Consulte ou cancele</h2>
+        <p>Digite o CPF informado no momento do agendamento.</p>
+      </div>
+      <form id="form-consulta" class="busca">
+        <input id="cpf-consulta" type="text" inputmode="numeric" maxlength="14" placeholder="CPF do paciente" required>
+        <button class="botao secundario" type="submit">Consultar</button>
+      </form>
+      <div id="lista-agendamentos" class="lista-agendamentos"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Clínica Vida</strong><p>Cuidando de você em cada etapa.</p></div>
+    <div><strong>Contato</strong><p>(61) 3333-2026<br>contato@clinicavida.com.br</p></div>
+    <div><strong>Endereço</strong><p>Brasília - DF<br>Segunda a sexta, 08h às 18h</p></div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
